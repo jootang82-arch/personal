@@ -1,0 +1,7 @@
+# Simulation build artifacts
+smbus_uvm/smbus_ip/sim/work/
+smbus_uvm/smbus_ip/sim/opt_top
+smbus_uvm/smbus_ip/sim/transcript
+*.wlf
+*.vstf
+*.tar

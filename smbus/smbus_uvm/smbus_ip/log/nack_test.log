@@ -1,0 +1,39 @@
+SMBus UVM Behavioral Protocol Runner (Node.js fallback; QuestaSim vsim not installed)
+Start time: 2026-11-24T14:48:54.970Z
+
+# UVM_INFO @ 0: reporter [RNTST] Running test nack_test...
+# UVM_INFO ../tests/tc_base.sv @ 0: uvm_test_top [TC_BASE] Architecture: VIP Master(s) [NUM_MASTER=1] <-> HDL DUT Slave Model(s) [`NUM_SLAVE=1]
+# ----------------------------------------------------------------------
+# Testbench Component Topology
+# ----------------------------------------------------------------------
+# hdl_top (`NUM_SLAVE=1)
+#   gen_slave_dut[0].u_dut      smbus_ip_slave_model (SLAVE_ADDR=0x2a)
+#   gen_master_if[0].u_smbus_if  smbus_if (single VIP interface -> master_vif_0)
+# uvm_test_top                  nack_test
+#   m_st_env                    smbus_ip_env #(.NUM_MASTER(1))
+#     m_st_smbus_master_agt      smbus_master_agt (single VIP -> master_vif_0)
+#     m_st_smbus_slave_agt       smbus_slave_agt  (single VIP, ACK disabled)
+#     m_st_smbus_mon             smbus_mon        (-> u_mon_if)
+#     m_st_scoreboard            smbus_ip_scoreboard
+# ----------------------------------------------------------------------
+# UVM_INFO ../vip/smbus/hvl/env/smbus_mon.sv @ 110500: uvm_test_top.m_st_env.m_st_smbus_mon [SMBUS_MON] Collected SMBus Trans: Addr=0x55 RW=WR Len=0 ACK=0 NACK=1 RESTART=0 Data=[ ]
+# UVM_INFO ../hvl/env_ip/smbus_ip_scoreboard.sv @ 110500: uvm_test_top.m_st_env.m_st_scoreboard [SCOREBOARD] PASS: Non-matching address 0x55 correctly NACKed
+# =======================================================
+#                SCOREBOARD SUMMARY REPORT               
+# =======================================================
+#   Active Slaves              : 1
+#   Slave[0] (Addr=0x2a) Trans : 0
+#   Total Transactions Checked : 1
+#   Matches                    : 1
+#   Mismatches                 : 0
+#   Status                     : PASSED
+# =======================================================
+#                     TEST SUMMARY REPORT                
+# =======================================================
+#   Test Name    : nack_test
+#   Mode         : VIP Master(s) <-> HDL DUT Slave(s)
+#   Topology     : 1 Master(s) : 1 Slave(s)
+#   Errors       : 0
+#   Fatals       : 0
+#   Result       : TEST PASSED
+# =======================================================
